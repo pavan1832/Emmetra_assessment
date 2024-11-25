@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Clock Configuration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Left Sidebar with Captcha -->
+        <div class="sidebar">
+            <h3>Captcha</h3>
+            <p id="captcha"></p>
+            <input type="text" id="captcha-input" placeholder="Solve the puzzle">
+            <button id="captcha-submit">Submit</button>
+            <p id="captcha-result"></p>
+        </div>
+
+        <!-- Configuration Panel (Right) -->
+        <div class="config-panel">
+            <h3>Clock Configuration</h3>
+            <div id="clock-toggle">
+                <label for="clock-type">Do you want pendulum?</label>
+                <select id="clock-type">
+                    <option value="analog">Yes</option>
+                    <option value="digital">No</option>
+                </select>
+            </div>
+
+            <!-- Step 2 Button (Initially disabled) -->
+            <button id="step-2-button" disabled>Step 3</button>
+        </div>
+
+        <!-- Right side (Clock) -->
+        <div class="clock" id="clock">
+            <!-- Analog Clock -->
+            <div class="analog-clock" id="analog-clock">
+                <div class="clock-face">
+                    <div class="hour-hand" id="hour-hand"></div>
+                    <div class="minute-hand" id="minute-hand"></div>
+                    <div class="second-hand" id="second-hand"></div>
+                </div>
+                <div class="clock-numbers">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                    <span>11</span>
+                    <span>12</span>
+                </div>
+                <!-- Pendulum -->
+                <div class="pendulum" id="pendulum" style="display:none;">
+                    <div class="pendulum-bar"></div>
+                    <div class="pendulum-weight"></div>
+                </div>
+            </div>
+            <!-- Digital Clock -->
+            <div class="digital-clock" id="digital-clock"></div>
+        </div>
+    </div>
+
+    <script src="step2.js"></script>
+</body>
+</html>

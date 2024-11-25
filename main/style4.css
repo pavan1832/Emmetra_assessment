@@ -1,0 +1,183 @@
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main Container holding all the sections */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%; /* Adjust width as needed */
+    background-color: black; /* Black background for the whole container */
+    padding: 20px; /* Add some padding around the container */
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+/* Styling for the captcha container */
+.captcha-container {
+    text-align: center;
+    width: 30%; /* Adjust width as needed */
+    background-color: black; /* Black background for captcha container */
+    color: white; /* White text for contrast */
+    padding: 20px;
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+/* Styling for the wall clock container */
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%; /* Adjust width as needed */
+    background-color: black; /* Black background for clock container */
+    color: white; /* White text for contrast */
+    padding: 20px;
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+/* Styling for the wall clock itself */
+.analog-clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    background-color: #000;
+    position: relative;
+}
+
+/* Clock Numbers */
+.clock-numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.clock-numbers span {
+    position: absolute;
+    font-size: 0.8em;
+    color: white;
+}
+
+.clock-numbers span:nth-child(1) { transform: rotate(0deg) translateY(-80px); }
+.clock-numbers span:nth-child(2) { transform: rotate(30deg) translateY(-80px); }
+.clock-numbers span:nth-child(3) { transform: rotate(60deg) translateY(-80px); }
+.clock-numbers span:nth-child(4) { transform: rotate(90deg) translateY(-80px); }
+.clock-numbers span:nth-child(5) { transform: rotate(120deg) translateY(-80px); }
+.clock-numbers span:nth-child(6) { transform: rotate(150deg) translateY(-80px); }
+.clock-numbers span:nth-child(7) { transform: rotate(180deg) translateY(-80px); }
+.clock-numbers span:nth-child(8) { transform: rotate(210deg) translateY(-80px); }
+.clock-numbers span:nth-child(9) { transform: rotate(240deg) translateY(-80px); }
+.clock-numbers span:nth-child(10) { transform: rotate(270deg) translateY(-80px); }
+.clock-numbers span:nth-child(11) { transform: rotate(300deg) translateY(-80px); }
+.clock-numbers span:nth-child(12) { transform: rotate(330deg) translateY(-80px); }
+
+/* Clock Hands Styling */
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hour Hand */
+.hour-hand {
+    position: absolute;
+    width: 6px;
+    height: 60px;
+    background-color: black;
+    top: 20%;
+    transform-origin: 50% 100%;
+    transform: rotate(90deg);
+}
+
+/* Minute Hand */
+.minute-hand {
+    position: absolute;
+    width: 4px;
+    height: 80px;
+    background-color: #555;
+    top: 10%;
+    transform-origin: 50% 100%;
+    transform: rotate(180deg);
+}
+
+/* Second Hand */
+.second-hand {
+    position: absolute;
+    width: 2px;
+    height: 90px;
+    background-color: red;
+    top: 5%;
+    transform-origin: 50% 100%;
+    transform: rotate(270deg);
+}
+
+/* Upload Section Styling */
+.upload-container {
+    text-align: center;
+    width: 30%; /* Adjust width as needed */
+    background-color: black; /* Black background for upload container */
+    color: white; /* White text for contrast */
+    padding: 20px;
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+/* Hide the uploaded image preview initially */
+#uploaded-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: none;
+}
+
+/* Captcha input and button styling */
+#captcha-input {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 1em;
+    background-color: #333; /* Dark background for the input field */
+    color: white; /* White text for contrast */
+    border: none;
+    border-radius: 5px;
+}
+
+#captcha-submit {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#captcha-submit:hover {
+    background-color: #45a049;
+}
+
+#captcha-result {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: green;
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock with Frame Selection</title>
+    <style>
+    /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align elements to the top */
+    align-items: center; /* Center elements horizontally */
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    padding-top: 20px;
+}
+
+/* Gray container box */
+#background-container {
+    background-color: gray; /* Set container background to gray */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: center; /* Center the items inside */
+    align-items: flex-start; /* Align items to the top inside */
+    gap: 20px; /* Add space between elements */
+    margin-top:250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+    width: 90%; /* Set width to 90% of the screen */
+    max-width: 800px; /* Limit maximum width */
+}
+
+/* Clock container */
+#clock-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0; /* Remove extra spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Frame styles */
+.frame-glass {
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.frame-wooden {
+    border: 10px solid #8B4513; /* Wooden color */
+    background: #DEB887;
+}
+
+.frame-steel {
+    border: 8px solid #4682B4; /* Steel border color */
+    background: silver; /* Set background to silver */
+}
+
+/* Clock hands */
+.hand {
+    position: absolute;
+    background-color: black;
+    transform-origin: center;
+    transition: transform 0.5s;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 50px;
+}
+
+.minute-hand {
+    width: 4px;
+    height: 70px;
+}
+
+.second-hand {
+    width: 2px;
+    height: 90px;
+    background-color: red;
+}
+
+/* CAPTCHA container */
+#captcha-container {
+    margin: 0; /* Remove extra spacing */
+    text-align: center;
+}
+
+/* Frame selection */
+#frame-selection {
+    margin: 0; /* Remove extra spacing */
+    text-align: center;
+}
+
+/* Center Step 4 button */
+#button-container {
+    margin-top: 20px; /* Add spacing below the contents */
+    text-align: center; /* Center the button */
+}
+
+#step4-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#step4-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+    </style>
+</head>
+<body>
+
+    <!-- Main container with background -->
+    <div id="background-container">
+        <!-- CAPTCHA -->
+        <div id="captcha-container">
+            <label for="captcha-input" id="captcha-label"></label>
+            <input type="text" id="captcha-input">
+            <button id="captcha-btn">Submit</button>
+        </div>
+
+        <!-- Frame Selection -->
+        <div id="frame-selection">
+            <label for="frame-type">Choose Frame:</label>
+            <select id="frame-type" disabled>
+                <option value="glass">Glass</option>
+                <option value="wooden">Wooden</option>
+                <option value="steel">Steel</option>
+            </select>
+        </div>
+
+        <!-- Clock with frame -->
+        <div id="clock-container" class="frame-glass">
+            <div class="hand hour-hand" id="hour-hand"></div>
+            <div class="hand minute-hand" id="minute-hand"></div>
+            <div class="hand second-hand" id="second-hand"></div>
+        </div>
+    </div>
+
+    <!-- Step 4 Button -->
+    <div id="button-container">
+        <button id="step4-btn">Step 4</button>
+    </div>
+
+    <script>
+        // Function to generate a random math captcha
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+            const num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+            const result = num1 + num2; // The result of the math operation
+            document.getElementById('captcha-label').innerText = `Solve: ${num1} + ${num2} = ?`; // Display the problem
+            return result; // Return the correct answer
+        }
+
+        // Track the correct answer to the captcha
+        let correctAnswer = generateCaptcha();
+
+        // Clock hands update function
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // Calculate rotation for hands
+            const hourDeg = (hours % 12) * 30 + (minutes / 2);  // Hour hand
+            const minuteDeg = minutes * 6; // Minute hand
+            const secondDeg = seconds * 6; // Second hand
+
+            document.getElementById('hour-hand').style.transform = `rotate(${hourDeg}deg)`;
+            document.getElementById('minute-hand').style.transform = `rotate(${minuteDeg}deg)`;
+            document.getElementById('second-hand').style.transform = `rotate(${secondDeg}deg)`;
+        }
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call
+
+        // Handle CAPTCHA validation
+        const captchaInput = document.getElementById('captcha-input');
+        const captchaBtn = document.getElementById('captcha-btn');
+        const frameSelect = document.getElementById('frame-type');
+
+        captchaBtn.addEventListener('click', () => {
+            if (parseInt(captchaInput.value) === correctAnswer) {
+                // Enable frame selection after CAPTCHA solved
+                frameSelect.disabled = false;
+                alert('CAPTCHA solved! Choose your clock frame.');
+                correctAnswer = generateCaptcha(); // Generate a new CAPTCHA after solving
+            } else {
+                alert('Incorrect CAPTCHA!');
+                correctAnswer = generateCaptcha(); // Generate a new CAPTCHA in case of wrong answer
+            }
+        });
+
+        // Change frame type based on user selection
+        frameSelect.addEventListener('change', () => {
+            const clockContainer = document.getElementById('clock-container');
+            clockContainer.className = ''; // Remove any existing frame classes
+            const selectedFrame = frameSelect.value;
+
+            if (selectedFrame === 'glass') {
+                clockContainer.classList.add('frame-glass');
+            } else if (selectedFrame === 'wooden') {
+                clockContainer.classList.add('frame-wooden');
+            } else if (selectedFrame === 'steel') {
+                clockContainer.classList.add('frame-steel');
+            }
+        });
+
+        // Navigate to Step 4 page
+        const step4Btn = document.getElementById('step4-btn');
+        step4Btn.addEventListener('click', () => {
+            window.location.href = 'step4.html'; // Replace 'step4.html' with the actual path of your Step 4 page
+        });
+    </script>
+
+</body>
+</html>

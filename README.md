@@ -1,98 +1,97 @@
-# Emmetra_assessment
-Emmetra assessment
-Here is a structured README file for your GitHub repository based on your assignment requirements:
+#Emmetra Assignment
+# Wall Clock Interactive Interface  
 
-# Wall Clock Interactive Interface
+## Live Demo  
 
-## Overview
+The project has been deployed and is accessible online:  
+[https://emmetra.netlify.app/](https://emmetra.netlify.app/)  
 
-This project is an interactive user interface assignment built using **HTML**, **CSS**, and **JavaScript**. The application features a wall clock with configurable options, a command panel, and puzzles to unlock new features. Users can customize the clock's display, add a pendulum, choose a frame, and upload an image for the clock face by solving puzzles.
+## Overview  
 
-## Features
+This project is an interactive user interface assignment built using **HTML**, **CSS**, and **JavaScript**. The application features a wall clock with configurable options, a command panel, and puzzles to unlock new features. Users can customize the clock's display, add a pendulum, choose a frame, and upload an image for the clock face by solving puzzles.  
 
-1. **Wall Clock Customization:**
-   - The clock is positioned on the **right side**.
-   - Options to switch between **analog** and **digital** display.
-   - Add a **pendulum** to the analog clock.
-   - Choose the clock frame material: **glass**, **metal**, or **steel**.
-   - Upload an image to set it as the clock background.
+## Features  
 
-2. **Interactive Puzzles:**
-   - Users solve puzzles or captchas to unlock customization options.
-   - Four steps of puzzles with new features unlocked after each step.
+1. **Wall Clock Customization:**  
+   - The clock is positioned on the **right side**.  
+   - Options to switch between **analog** and **digital** display.  
+   - Add a **pendulum** to the analog clock.  
+   - Choose the clock frame material: **glass**, **metal**, or **steel**.  
+   - Upload an image to set it as the clock background.  
 
-3. **Command Panel:**
-   - Positioned in the **center** for user interaction.
-   - Displays options dynamically as puzzles are solved.
+2. **Interactive Puzzles:**  
+   - Users solve puzzles or captchas to unlock customization options.  
+   - Four steps of puzzles with new features unlocked after each step.  
 
-4. **Captcha/Puzzle Section:**
-   - Located on the **left side** of the interface.
+3. **Command Panel:**  
+   - Positioned in the **center** for user interaction.  
+   - Displays options dynamically as puzzles are solved.  
 
-## How It Works
+4. **Captcha/Puzzle Section:**  
+   - Located on the **left side** of the interface.  
 
-### Steps:
+## How It Works  
 
-1. **Solve Captcha (Step 1):**
-   - Unlock the **analog/digital clock** toggle option.
-   - The user can choose between an analog or digital display.
+### Steps:  
 
-2. **Solve Second Puzzle (Step 2):**
-   - Unlock the **pendulum option** for the analog clock.
-   - The checkbox defaults to "Yes." Users should first select "No" and then "Yes" to activate the pendulum.
+1. **Solve Captcha (Step 1):**  
+   - Unlock the **analog/digital clock** toggle option.  
+   - The user can choose between an analog or digital display.  
 
-3. **Solve Third Puzzle (Step 3):**
-   - Unlock the option to select the clock's **frame material** (Glass, Metal, or Steel).
+2. **Solve Second Puzzle (Step 2):**  
+   - Unlock the **pendulum option** for the analog clock.  
+   - The checkbox defaults to "Yes." Users should first select "No" and then "Yes" to activate the pendulum.  
 
-4. **Solve Fourth Puzzle (Step 4):**
-   - Unlock the feature to **upload an image** for the clock face.
+3. **Solve Third Puzzle (Step 3):**  
+   - Unlock the option to select the clock's **frame material** (Glass, Metal, or Steel).  
 
-### Execution:
+4. **Solve Fourth Puzzle (Step 4):**  
+   - Unlock the feature to **upload an image** for the clock face.  
 
-1. **Download or Clone the Repository:**
-   - Download the project as a ZIP file or clone it using the Git command:
-     ```bash
-     git clone <repository_url>
-     ```
+### Execution:  
 
-2. **Run the Application:**
-   - Open the `trail.html` file in a browser to start the interface.
+1. **Download or Clone the Repository:**  
+   - Download the project as a ZIP file or clone it using the Git command:  
+     ```bash  
+     git clone <repository_url>  
+     ```  
 
-## Output Preview
+2. **Run the Application Locally:**  
+   - Open the `trail.html` file in a browser to start the interface.  
 
-### Images:
-- A collection of screenshots demonstrating the application's interface and functionality.
+## Output Preview  
 
-### Video:
-- A video walkthrough showcasing the complete workflow of the application.
+### Images:  
+- A collection of screenshots demonstrating the application's interface and functionality.  
 
-## File Structure
+### Video:  
+- A video walkthrough showcasing the complete workflow of the application.  
+
+## File Structure  
 
 ```
-📁 wall-clock-interface/
-├── 📄 index.html         # Main HTML file
-├── 📁 css/              # Contains all CSS files
-│   └── 📄 style.css      # Styling for the interface
-├── 📁 js/               # Contains all JavaScript files
-│   └── 📄 script.js      # Logic for puzzles and clock interaction
-├── 📄 README.md          # Documentation file
-├── 📁 assets/           # Contains images, videos, and other assets
-│   ├── 📄 preview.png    # Screenshot preview
-│   └── 📄 demo.mp4       # Video demo
-```
+📁 wall-clock-interface/  
+├── 📄 index.html         # Main HTML file  
+├── 📁 css/              # Contains all CSS files  
+│   └── 📄 style.css      # Styling for the interface  
+├── 📁 js/               # Contains all JavaScript files  
+│   └── 📄 script.js      # Logic for puzzles and clock interaction  
+├── 📄 README.md          # Documentation file  
+├── 📁 assets/           # Contains images, videos, and other assets  
+│   ├── 📄 preview.png    # Screenshot preview  
+│   └── 📄 demo.mp4       # Video demo  
+```  
 
-## Technologies Used
+## Technologies Used  
 
-- **HTML**: Structuring the interface.
-- **CSS**: Styling and layout.
-- **JavaScript**: Interactive functionalities and puzzle logic.
+- **HTML**: Structuring the interface.  
+- **CSS**: Styling and layout.  
+- **JavaScript**: Interactive functionalities and puzzle logic.  
 
-## Instructions for Contributors
+## Instructions for Contributors  
 
-If you'd like to contribute:
-1. Fork the repository.
-2. Make your changes in a feature branch.
-3. Submit a pull request with a detailed description.
+If you'd like to contribute:  
+1. Fork the repository.  
+2. Make your changes in a feature branch.  
+3. Submit a pull request with a detailed description.  
 
----
-
-Let me know if you need further modifications!
